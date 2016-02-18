@@ -50,7 +50,7 @@ class PyBingSearch(object):
             json_results = r.json()
         except ValueError as vE:
             if not self.safe:
-                raise PyBingException("Request returned with code %s, error msg: %s" % (r.status_code, r.text))
+                raise PyBingException("Request returned with code {}, error msg: {}".format(r.status_code, r.text))
             else:
                 print("[ERROR] Request returned with code {}, error msg: {}. \nContinuing in 5 seconds.".format(
                         r.status_code, r.text))
